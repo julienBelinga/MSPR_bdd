@@ -1,12 +1,12 @@
 -- connect system/votremotdepasse Si vous n'êtes pas déjà connecté depuis SQLDeveloper ou votre IDE
--- create user rparis identified by rparis; a jouer lors du premier import
+-- create user rparis identified by rparis
 drop user rparis cascade;
 
 create user rparis identified by rparis
 default tablespace users;
-
+alter user rparis quota unlimited on USERS;
+grant unlimited tablespace to rparis;
 grant connect, resource to rparis;
-
 connect rparis/rparis
 ALTER SESSION SET CURRENT_SCHEMA = RPARIS;
 -- les tables sans FK
