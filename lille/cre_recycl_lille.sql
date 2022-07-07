@@ -1,13 +1,12 @@
 -- connect system/votremotdepasse Si vous n'êtes pas déjà connecté depuis SQLDeveloper ou votre IDE
 -- create user rlille identified by rlille; a jouer lors du premier import si vous êtes sur Datagrip
-
 drop user rlille cascade;
 
 create user rlille identified by rlille
 default tablespace users;
-
+alter user rlille quota unlimited on USERS;
+grant unlimited tablespace to rlille;
 grant connect, resource to rlille;
-
 connect rlille/rlille
 ALTER SESSION SET CURRENT_SCHEMA = RLILLE;
 -- les tables sans FK
