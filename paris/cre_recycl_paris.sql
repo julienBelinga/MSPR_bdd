@@ -7,7 +7,7 @@ default tablespace users;
 alter user rparis quota unlimited on USERS;
 grant unlimited tablespace to rparis;
 grant connect, resource to rparis;
-connect rparis/rparis
+-- connect rparis/rparis
 ALTER SESSION SET CURRENT_SCHEMA = RPARIS;
 -- les tables sans FK
 -- ==================
@@ -107,7 +107,6 @@ constraint FK_detaildep_tournee foreign key (NoTournee) references tournee(NoTou
 constraint FK_detaildep_typedech foreign key (notypedechet) references typedechet(notypedechet),
 constraint FK_detaildep_centre foreign key (NoCentre) references centretraitement(NoCentre)
 );
-
 
 -- cr�ation de s�quences
 create sequence seq_typedechet start with 1 increment by 1;
