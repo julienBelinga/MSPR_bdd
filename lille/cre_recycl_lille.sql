@@ -7,7 +7,7 @@ default tablespace users;
 alter user rlille quota unlimited on USERS;
 grant unlimited tablespace to rlille;
 grant connect, resource to rlille;
-connect rlille/rlille
+-- connect rlille/rlille
 ALTER SESSION SET CURRENT_SCHEMA = RLILLE;
 -- les tables sans FK
 -- ==================
