@@ -124,4 +124,39 @@ create sequence seq_tournee start with 1 increment by 1;
 create sequence seq_demande start with 1 increment by 1;
 
 
+-- créer un role --
+CREATE ROLE ROLERESP NOT IDENTIFIED;
+CREATE ROLE ROLEAGENT NOT IDENTIFIED;
+CREATE ROLE ROLEDIRECTEUR NOT IDENTIFIED;
+
+-- attribuer des privilèges--
+GRANT SELECT ANY TABLE TO ROLERESP;
+GRANT SELECT ANY TABLE TO ROLEAGENT;
+GRANT SELECT ANY TABLE TO ROLEDIRECTEUR;
+
+
+CREATE PROFILE directeur1 LIMIT 
+   SESSIONS_PER_USER          2 
+   PASSWORD_LIFE_TIME        60
+   FAILED_LOGIN_ATTEMPTS      3;
+   
+   
+CREATE PROFILE responsable1 LIMIT 
+   SESSIONS_PER_USER          2 
+   PASSWORD_LIFE_TIME        60
+   FAILED_LOGIN_ATTEMPTS      3;
+   
+   
+CREATE PROFILE agent1 LIMIT 
+   SESSIONS_PER_USER          1
+   PASSWORD_LIFE_TIME        60
+   FAILED_LOGIN_ATTEMPTS      3;
+   
+   
+CREATE PROFILE employe1 LIMIT 
+   SESSIONS_PER_USER          1
+   PASSWORD_LIFE_TIME        60
+   FAILED_LOGIN_ATTEMPTS      3;
+   
+
 
